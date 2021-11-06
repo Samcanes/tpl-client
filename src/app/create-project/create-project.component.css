@@ -1,0 +1,14 @@
+#button-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#button{
+    margin-top: 10px;
+    background-color: aqua;
+    align-self: center;
+}
+label{
+    margin: 10px;
+}

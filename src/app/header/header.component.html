@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <div class="container-fluid">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav me-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/create" routerLinkActive="active">Create</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/update" routerLinkActive="active">Update</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/user" routerLinkActive="active">User Data</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#">Logo</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/login" routerLinkActive="active">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/register" routerLinkActive="active">Register</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/logout" routerLinkActive="active">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<!-- *ngIf="!_authService.loggedIn()" -->
