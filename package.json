@@ -2,9 +2,8 @@
   "name": "tpl-client",
   "version": "0.0.0",
   "scripts": {
-    "heroku-postbuild": "ng build --prod",
     "ng": "ng",
-    "start": "node server.js",
+    "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
