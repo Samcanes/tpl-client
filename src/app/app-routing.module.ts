@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AuthenticatorGuard } from './authenticator.guard';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { HomeCountersComponent } from './home-counters/home-counters.component';
 import { LoginComponent } from './login/login.component';
@@ -15,26 +16,24 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeCountersComponent
+    component: HomeCountersComponent,
+    canActivate: [AuthenticatorGuard],
   },
   {
     path: 'create',
-    component: CreateProjectComponent
+    component: CreateProjectComponent,
+    canActivate: [AuthenticatorGuard],
   },
   {
     path: 'update',
+    canActivate: [AuthenticatorGuard],
     component: UpdateProjectComponent
   },
   {
     path: 'user',
+    canActivate: [AuthenticatorGuard],
     component: UserDataComponent
   },
-  
-  // {
-  //   path: 'special',
-  //   canActivate: [AuthGuard],
-  //   component: SpecialEventsComponent
-  // },
   {
     path: 'login',
     component: LoginComponent

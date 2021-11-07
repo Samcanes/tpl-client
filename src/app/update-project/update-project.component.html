@@ -9,14 +9,26 @@
         <th scope="col">Priority</th>
         <th scope="col">Department</th>
         <th scope="col">Location</th>
+        <th scope="col">Status</th>
+        
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>@mdo</td>
+      <tr *ngFor="let project of projects">
+        <th scope="row">{{project['name']}}</th>
+        <td>{{project['reason']}}</td>
+        <td>{{project['type']}}</td>
+        <td>{{project['division']}}</td>
+        <td>{{project['category']}}</td>
+        <td>{{project['priority']}}</td>
+        <td>{{project['department']}}</td>
+        <td>{{project['location']}}</td>
+        <td id="status-buttons"> 
+          <button>Start</button>
+          <button>Close</button>
+          <button>Cancel</button> 
+        </td>
+        
       </tr>
     </tbody>
   </table>

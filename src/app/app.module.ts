@@ -16,6 +16,9 @@ import { CreateProjectComponent } from './create-project/create-project.componen
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import { HomeCountersComponent } from './home-counters/home-counters.component';
 import { UserDataComponent } from './user-data/user-data.component';
+import { AuthProjectEventsService } from './auth-project-events.service';
+import { AuthenticatorGuard } from './authenticator.guard';
+import { TokenInterceptorService } from './token-interceptor.service';
 
 @NgModule({
   declarations: [
@@ -36,7 +39,11 @@ import { UserDataComponent } from './user-data/user-data.component';
     HttpClientModule,
     AppRoutingModule
   ],
-  providers: [AuthService],
+  providers: [AuthService, AuthProjectEventsService, AuthenticatorGuard, {
+    provide: HTTP_INTERCEPTORS,
+    useClass: TokenInterceptorService,
+    multi: true
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

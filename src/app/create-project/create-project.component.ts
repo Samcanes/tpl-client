@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthProjectEventsService } from '../auth-project-events.service';
 
 
 @Component({
@@ -22,27 +23,27 @@ export class CreateProjectComponent implements OnInit {
       status: "Registered"
   }
 
-  constructor() { }
+  constructor(private _events: AuthProjectEventsService) { }
 
   ngOnInit(): void {
-
-
   }
 
-
-  submitProject(){
-    console.log(this.projectData['name'])
-    for (let key in this.projectData) {
-      console.log(key)
-      console.log(this.projectData + "['" + key + "']" )
-      if(this.projectData == null){
-        console.log(key)
-        alert(key + "is reqd")
-        return null
-      }
-    }
+  createProject(){
+    console.log(this.projectData['name']) //this works
+    // for (let key in this.projectData) {
+    //   console.log(key) // this works
+    //   // console.log(this.projectData[key])  ///4
+    //   if(this.projectData == null){
+    //     console.log(key)
+    //     alert(key + "is reqd")
+    //   }
+    // }
+    
     console.log(this.projectData)
-    return null
+    this._events.createProjects(this.projectData)
+    .subscribe(
+      res => console.log(res),
+      err => console.log(err)
+    )
   }
-  
 }
