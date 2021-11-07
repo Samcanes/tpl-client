@@ -23,7 +23,7 @@ export class AuthService {
   }
 
   loggedIn(){
-    console.log("token existance is: ", !!sessionStorage.getItem('token'))
+    // console.log("token existance is: ", !!sessionStorage.getItem('token'))
     return !!sessionStorage.getItem('token')
   }
 

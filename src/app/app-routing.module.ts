@@ -17,7 +17,6 @@ const routes: Routes = [
   {
     path: 'home',
     component: HomeCountersComponent,
-    canActivate: [AuthenticatorGuard],
   },
   {
     path: 'create',

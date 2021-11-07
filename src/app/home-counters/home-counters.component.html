@@ -1,1 +1,98 @@
-<p>home-counters works!</p>
+<div class="row">
+    <div class="col-sm">
+        <div class="card mb-3 widget-content bg-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="widget-heading">Documented</div>
+                        </div>
+                        <div class="row">
+                            <div class="widget-subheading">(All users)</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="h1"><span>{{projectsLength}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card mb-3 widget-content bg-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="widget-heading">Registered</div>
+                        </div>
+                        <div class="row">
+                            <div class="widget-subheading">(Yet to Begin)</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="h1"><span>{{  statusRegisteredCounter
+                        }}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card mb-3 widget-content bg-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="widget-heading">Running</div>
+                        </div>
+                        <div class="row">
+                            <div class="widget-subheading">(In progress)</div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="h1"><span>{{statusRunningCounter}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card mb-3 widget-content bg-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="widget-heading">Closed</div>
+                        </div>
+                        <div class="row">
+                            <div class="widget-subheading">(Ahem! Done)</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="h1"><span>{{statusClosedCounter}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm">
+        <div class="card mb-3 widget-content bg-dark">
+            <div class="widget-content-wrapper text-white">
+                <div class="row">
+                    <div class="col-8">
+                        <div class="row">
+                            <div class="widget-heading">Cancelled</div>
+                        </div>
+                        <div class="row">
+                            <div class="widget-subheading">(Unfortunate)</div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="h1"><span>{{statusCancelledCounter}}</span></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
