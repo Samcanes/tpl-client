@@ -27,8 +27,9 @@ export class LoginComponent implements OnInit {
       .subscribe(
         res => {
           if(res.token){
-            console.log(res.token)
+            console.log(res)
             sessionStorage.setItem('token', res.token)
+            // sessionStorage.setItem('loggedIn', "1")
             this._router.navigate(['/home'])
           }else{
             this._router.navigate(['/login'])

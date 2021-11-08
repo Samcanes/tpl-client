@@ -19,6 +19,9 @@ import { UserDataComponent } from './user-data/user-data.component';
 import { AuthProjectEventsService } from './auth-project-events.service';
 import { AuthenticatorGuard } from './authenticator.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatButtonModule} from '@angular/material/button'
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,8 @@ import { TokenInterceptorService } from './token-interceptor.service';
     BrowserModule,
     FormsModule, 
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule, MatButtonModule, MatButtonToggleModule
   ],
   providers: [AuthService, AuthProjectEventsService, AuthenticatorGuard, {
     provide: HTTP_INTERCEPTORS,

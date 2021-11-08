@@ -1,0 +1,15 @@
+/* .btn{
+    background-color: aqua;
+    margin-right: 5px;
+}
+.btn:active{
+    background-color: green;
+} */
+.mat-button-toggle{
+    background-color: aqua;
+    margin-right: 5px;
+
+}
+.mat-button-toggle-checked{
+    background-color: rgb(0, 255, 0);
+}

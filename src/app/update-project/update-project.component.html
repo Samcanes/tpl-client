@@ -10,7 +10,6 @@
         <th scope="col">Department</th>
         <th scope="col">Location</th>
         <th scope="col">Status</th>
-        
       </tr>
     </thead>
     <tbody>
@@ -24,9 +23,11 @@
         <td>{{project['department']}}</td>
         <td>{{project['location']}}</td>
         <td id="status-buttons"> 
-          <button>Start</button>
-          <button>Close</button>
-          <button>Cancel</button> 
+          <mat-button-toggle-group #toggleGroup='matButtonToggleGroup' value="{{project['status']}}">
+            <mat-button-toggle (click)="statusUpdate(project['_id'], 'Running')" value="Running">Start</mat-button-toggle>
+            <mat-button-toggle (click)="statusUpdate(project['_id'], 'Closed')" value="Closed">Close</mat-button-toggle>
+            <mat-button-toggle (click)="statusUpdate(project['_id'], 'Cancelled')" value="Cancelled">Cancel</mat-button-toggle>
+          </mat-button-toggle-group>
         </td>
         
       </tr>
