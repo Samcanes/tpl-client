@@ -11,7 +11,8 @@ export class AuthProjectEventsService {
   private _updateProject = "https://tpl-server.herokuapp.com/api/project/update";
   private _readProjects = "https://tpl-server.herokuapp.com/api/project/read"
   private _readAllProjects = "https://tpl-server.herokuapp.com/api/project/readAll"
-  
+  private _readGraphData = "https://tpl-server.herokuapp.com/api/project/readGraph"
+
   constructor(private http: HttpClient) { }
 
   createProjects(project: any) {
@@ -27,5 +28,8 @@ export class AuthProjectEventsService {
   }
   readAllProjects() {
     return this.http.get<any>(this._readAllProjects)
+  }
+  readGraphData() {
+    return this.http.get<any>(this._readGraphData)
   }
 }

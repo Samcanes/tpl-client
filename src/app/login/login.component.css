@@ -9,3 +9,9 @@
     background-color: aqua;
     align-self: center;
 }
+#successMsgTheme{
+    color: rgb(68, 136, 0);
+}
+#failureMsgTheme{
+    color: red;
+}

@@ -9,15 +9,16 @@
                     <h3 class="mb-0">Login Form:</h3>
                 </div>
                 <div class="card-body">
-                    <form class="form">
+                    <form class="form" ngNativeValidate (ngSubmit)='loginUser()'>
                         <div class="row">
-                            <div class="form-group">
+                            <div class="form-group" ngNativeValidate>
                                 <label for="email">Email:</label>
                                 <input 
                                 type="email"
                                 name="email" 
                                 [(ngModel)]="loginUserData.email" 
                                 class="form-control rounded-0"
+                                
                                 required
                                 >
                             </div>
@@ -32,14 +33,24 @@
                         
                         <!-- class="row" -->
                         <div id="button-parent">
-                            <button id="button" (click)="loginUser()" type="button" class="btn float-none">Login</button>
+                            <input id="button"  type='submit' class="btn float-none" value='Login' />
+
+                            <!-- <button id="button" (click)="loginUser()" type="button" class="btn float-none">Login</button> -->
                         </div>
                     </form>
+              
                 </div>
+                
                 <!--/card-block-->
             </div>
             <!-- /form card login -->
-
+            <br>
+            <div id="button-parent">
+                <div id="msgs">
+                    <p class="h2"  *ngIf=" loginStatus === 1" id="successMsgTheme">Logging In! Pls hold for a min.......</p>
+                    <p class="h2"  *ngIf=" loginStatus === 2" id="failureMsgTheme">Login Failed! Invalid Credentials</p>
+                </div>
+            </div>
         </div>
 
 

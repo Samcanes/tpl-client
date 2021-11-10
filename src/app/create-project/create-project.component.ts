@@ -23,6 +23,8 @@ export class CreateProjectComponent implements OnInit {
       status: "Registered"
   }
 
+  createStatus: number = 0;
+
   constructor(private _events: AuthProjectEventsService) { }
 
   ngOnInit(): void {
@@ -30,20 +32,17 @@ export class CreateProjectComponent implements OnInit {
 
   createProject(){
     console.log(this.projectData['name']) //this works
-    // for (let key in this.projectData) {
-    //   console.log(key) // this works
-    //   // console.log(this.projectData[key])  ///4
-    //   if(this.projectData == null){
-    //     console.log(key)
-    //     alert(key + "is reqd")
-    //   }
-    // }
-    
+    this.createStatus = 1;
     console.log(this.projectData)
     this._events.createProjects(this.projectData)
+    
     .subscribe(
-      res => console.log(res),
-      err => console.log(err)
+      res => {
+        console.log(res)
+        this.createStatus = 2;
+      },
+      err => {console.log(err)
+        this.createStatus = 3;}
     )
   }
 }

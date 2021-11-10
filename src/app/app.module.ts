@@ -22,6 +22,10 @@ import { TokenInterceptorService } from './token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button'
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { NgxChartsModule } from '@swimlane/ngx-charts';
+// import { ScaleLinear, ScalePoint, ScaleTime, ScaleBand } from 'd3-scale';
+// import { BaseType } from 'd3-selection';
+
 
 @NgModule({
   declarations: [
@@ -41,7 +45,14 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     FormsModule, 
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule, MatButtonModule, MatButtonToggleModule
+    BrowserAnimationsModule, 
+    MatButtonModule, 
+    MatButtonToggleModule,
+    NgxChartsModule, 
+    // ScaleLinear, 
+    // ScalePoint, 
+    // ScaleTime, 
+    // ScaleBand,
   ],
   providers: [AuthService, AuthProjectEventsService, AuthenticatorGuard, {
     provide: HTTP_INTERCEPTORS,

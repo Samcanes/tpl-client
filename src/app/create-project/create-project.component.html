@@ -8,7 +8,7 @@
                     <h3 class="mb-0">Create Project:</h3>
                 </div>
                 <div class="card-body">
-                    <form class="form" ngNativeValidate>
+                    <form class="form"  ngNativeValidate (ngSubmit)='createProject()'>
                         <div class="row">
                             <div class="form-group">
                                 <label for="name">Name:</label>
@@ -101,15 +101,24 @@
                             </div>
                         </div>
                         <!-- class="row" -->
+                        
                         <!-- -->
                         <div id="button-parent">
-                            <button id="button"  (click)="createProject()"  type="button" class="btn float-none">Register</button>
+                            <input id="button"  type='submit' class="btn float-none" value='Create' />
+                            <!-- <button id="button"  (click)="createProject()"  type="button" class="btn float-none">Register</button> -->
                         </div>
                     </form>
                 </div>
                 <!--/card-block-->
             </div>
             <!-- /form card login -->
+            <div id="button-parent">
+                <div id="msgs">
+                    <p class="h3"  *ngIf=" createStatus === 1" id="successMsgTheme">Creating your form! Pls hold.......</p>
+                    <p class="h2"  *ngIf=" createStatus === 2" id="successMsgTheme">Project Created Succesfully</p>
+                    <p class="h2"  *ngIf=" createStatus === 3" id="failureMsgTheme">Failed Project Creation</p>
+                </div>
+            </div>
 
         </div>
 

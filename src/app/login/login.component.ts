@@ -15,6 +15,8 @@ export class LoginComponent implements OnInit {
     email: '',
     password: '',
   }
+
+  loginStatus: number = 0;
   
   constructor(private _auth: AuthService, private _router: Router) { }
 
@@ -23,9 +25,15 @@ export class LoginComponent implements OnInit {
   }
 
   loginUser() {
+    this.loginStatus = 1
     this._auth.loginUser(this.loginUserData)
       .subscribe(
         res => {
+          console.log(res)
+          console.log(res.status)
+          if(res){
+            this.loginStatus = 2
+          }
           if(res.token){
             console.log(res)
             sessionStorage.setItem('token', res.token)
@@ -33,13 +41,13 @@ export class LoginComponent implements OnInit {
             this._router.navigate(['/home'])
           }else{
             this._router.navigate(['/login'])
-
           }
           // console.log(res)
         },
         err => {
+          this.loginStatus = 2
           console.log(err)
-          this._router.navigate(['/register'])
+          // this._router.navigate(['/register'])
         }
       )
   }
