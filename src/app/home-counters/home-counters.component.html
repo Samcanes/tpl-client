@@ -98,7 +98,20 @@
 </div>
 <div class="row">
     <div id="button-parent">
-        <div id='chart' class="chart"></div>
+        <div id='chart' class="chart">
+            <p>Pls note this is dummy static data</p>
+            <div style="display: block;">
+                <canvas baseChart 
+                  [datasets]="barChartData"
+                  [labels]="barChartLabels"
+                  [options]="barChartOptions"
+                  [plugins]="barChartPlugins"
+                  [legend]="barChartLegend"
+                  [chartType]="barChartType">
+                </canvas>
+              </div>
+              
+        </div>
     </div>
 
 </div>

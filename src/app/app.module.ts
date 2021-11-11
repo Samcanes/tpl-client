@@ -23,8 +23,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatButtonModule} from '@angular/material/button'
 import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
-// import { ScaleLinear, ScalePoint, ScaleTime, ScaleBand } from 'd3-scale';
-// import { BaseType } from 'd3-selection';
+
+import { ChartsModule } from 'ng2-charts';
+
 
 
 @NgModule({
@@ -49,6 +50,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     MatButtonModule, 
     MatButtonToggleModule,
     NgxChartsModule, 
+    ChartsModule,
     // ScaleLinear, 
     // ScalePoint, 
     // ScaleTime, 

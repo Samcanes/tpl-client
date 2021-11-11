@@ -1,4 +1,13 @@
-<table class="table">
+<div>
+  <label for="">Department: </label>
+  <select>
+    
+       <option class="form-group" *ngFor="let project of projects" value="{{project['department']}}">{{project['department']}}</option>
+    
+  </select>
+</div>
+<div>
+  <table class="table">
     <thead>
       <tr>
         <th scope="col">Name</th>
@@ -33,3 +42,4 @@
       </tr>
     </tbody>
   </table>
+</div>

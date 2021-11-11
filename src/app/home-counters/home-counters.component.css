@@ -2,3 +2,11 @@
     padding: 5px;
     max-width: 220px;
 }
+#button-parent{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+#chart{
+    width: 900px;
+}
