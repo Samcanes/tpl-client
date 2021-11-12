@@ -34,8 +34,8 @@ export class HomeCountersComponent implements OnInit {
   public barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 0, 55, 40], label: 'Registered' },
-    { data: [28, 48, 40, 19, 86, 27, 90], label: 'Closed' }
+    { data: [65, 59, 80, 81, 50, 55, 40], label: 'Registered' },
+    { data: [28, 48, 40, 19, 6, 27, 0], label: 'Closed' }
     // { data: this.runningData, label: "Running" },
     // { data: this.registeredData, label: "Registered" },
     // { data: this.cancelledData, label: "Cancelled" },

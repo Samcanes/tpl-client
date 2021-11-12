@@ -3,17 +3,17 @@
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav me-auto">
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Home</a>
+                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Dashboard</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/create" *ngIf="_authService.loggedIn()" routerLinkActive="active">Create</a>
+                    <a class="nav-link" routerLink="/create" *ngIf="_authService.loggedIn()" routerLinkActive="active">Add Project</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" routerLink="/update" *ngIf="_authService.loggedIn()" routerLinkActive="active">Update</a>
+                    <a class="nav-link" routerLink="/update" *ngIf="_authService.loggedIn()" routerLinkActive="active">Project List</a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" routerLink="/user" *ngIf="_authService.loggedIn()" routerLinkActive="active">User Data</a>
-                </li>
+                </li> -->
             </ul>
         </div>
         <div class="mx-auto order-0">

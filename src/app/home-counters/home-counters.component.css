@@ -6,6 +6,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* text-align: center; */
+}
+#note{
+    text-align: center;
+    color: red;
 }
 #chart{
     width: 900px;

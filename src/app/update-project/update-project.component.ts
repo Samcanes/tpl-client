@@ -29,13 +29,11 @@ export class UpdateProjectComponent implements OnInit {
           this.projects = res.projectData
           console.log(this.depselectionArray)
 
-          const map = new Map();
-          // for (const item of this.projects) {
-          //   if (!map.has(item.department)) {
-          //     map.set(item.id, true); // set any value to Map        
-          //     this.depselectionArray.push({ id: item.id, name: item.name });
-          //   }
-          // } 
+          for (const item of this.projects) {
+            console.log(item)
+              // this.depselectionArray.push(item.department);
+        
+          } 
           console.log(this.depselectionArray)
         },
         err => console.log(err)

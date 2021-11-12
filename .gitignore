@@ -55,3 +55,6 @@ baseline.json
 .husky/_
 *.pack
 .angular/cache/angular-webpack/e79d299823526d8896334b7ba4c1854442f61d4b/0.pack
+*.pack
+*.pack
+*.pack
