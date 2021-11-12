@@ -16,6 +16,6 @@ app.get('/', (req, res) =>
     res.sendFile('index.html', {root: 'dist/tpl-client/'}),
 );
 
-app.listen(process.env.PORT || 3000, () => {
+app.listen(process.env.PORT || 4000, () => {
   console.log("Your app is listening on port ");
 });
