@@ -20,10 +20,12 @@ export class HomeCountersComponent implements OnInit {
 
   graphsData : string[] = [];
   // graphsData = [];
-  runningData = [4, 6, 6, 8, 7];
-  registeredData = [4, 6, 6, 8, 7];
-  cancelledData = [1, 6, 0, 8, 7];
-  closedData = [4, 6, 6, 8, 7];
+  runningData: number[] = [0,0,0,0,0,0,0,0,0,0,0,0];
+  registeredData: number[] =[0,0,0,0,0,0,0,0,0,0,0,0];
+  cancelledData: number[] =[0,0,0,0,0,0,0,0,0,0,0,0];
+  closedData: number[] =[0,0,0,0,0,0,0,0,0,0,0,0];
+  totalData: number[] =[0,0,0,0,0,0,0,0,0,0,0,0];
+
 
   public barChartOptions: ChartOptions = {
     responsive: true,
@@ -34,12 +36,12 @@ export class HomeCountersComponent implements OnInit {
   public barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    { data: [65, 59, 80, 81, 50, 55, 40], label: 'Registered' },
-    { data: [28, 48, 40, 19, 6, 27, 0], label: 'Closed' }
-    // { data: this.runningData, label: "Running" },
-    // { data: this.registeredData, label: "Registered" },
-    // { data: this.cancelledData, label: "Cancelled" },
-    // { data: this.closedData, label: "Closed" }
+    // { data: this.registeredData, label: 'Registered' },
+    // { data: this.closedData, label: 'Closed' }
+    { data: this.runningData, label: "Running" },
+    { data: this.registeredData, label: "Registered" },
+    { data: this.cancelledData, label: "Cancelled" },
+    { data: this.closedData, label: "Closed" }
   ];
 
   constructor(private _projects: AuthProjectEventsService) { }
@@ -49,11 +51,13 @@ export class HomeCountersComponent implements OnInit {
       .subscribe(
         res => {
           // console.log(res.projectData)
+          // this.registeredData.push(3)
           this.projectsLength = res.projectData.length
           for (let each in res.projectData){
             // console.log(res.projectData[each])
             if(res.projectData[each].status === "Closed"){
               this.statusClosedCounter++
+              // console.log()
             } else if(res.projectData[each].status === "Cancelled"){
               this.statusCancelledCounter++
             }else if(res.projectData[each].status === "Registered"){
@@ -69,29 +73,29 @@ export class HomeCountersComponent implements OnInit {
       this._projects.readGraphData()
       .subscribe(
         res => {
-
           this.graphsData = res.obj
           // console.log(this.graphsData)
-          res.obj.forEach((element: any) => {
+          res.obj.forEach((element: any, index: any) => {
             this.barChartLabels.push(element._id)
-            console.log(element._id)
-            console.log(element.updates)
+            // console.log(element._id)
+            // console.log("length: ", element.updates.length)
             // let temp: string
-            element.updates.forEach((comp: any, index: any) => {
-              console.log(index)
+            element.updates.forEach((comp: any) => {
+              // console.log(comp)
+              // console.log(index)
+              // console.log(this.runningData, this.registeredData, this.closedData, this.cancelledData)
               if(comp.status === "Running"){
-                // temp = comp.total
-                this.runningData.push(comp.total)
+                this.runningData[index] = comp.total
               } else if(comp.status === "Registered") {
-                this.registeredData.push(comp.total)
-              } else if(comp.status === "Closed") {
-                this.closedData.push(comp.total)
-              } else if(comp.status === "Cancelled") {
-                this.cancelledData.push(comp.total)
-              } else {
-
-
-              }
+                this.registeredData[index] = comp.total
+              } 
+              else if(comp.status === "Closed") {
+                this.closedData[index] = comp.total
+              } 
+              else if(comp.status === "Cancelled") {
+                this.cancelledData[index] = comp.total
+              } 
+              // console.log(this.runningData, this.registeredData, this.closedData, this.cancelledData)
               
             });
           });
