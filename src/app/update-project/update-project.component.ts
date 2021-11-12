@@ -51,7 +51,7 @@ export class UpdateProjectComponent implements OnInit {
         res => {
           console.log(res.project)
           // this.projects = res.projectData
-          window.location.reload()
+          // window.location.reload()
         },
         err => console.log(err)
       )
