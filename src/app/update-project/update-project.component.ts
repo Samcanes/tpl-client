@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { AuthProjectEventsService } from '../auth-project-events.service';
 import { MatButtonModule } from '@angular/material/button';
 import { MatButtonToggleModule } from '@angular/material/button-toggle';
+import {MatSortModule} from '@angular/material/sort';
+
 
 @Component({
   selector: 'app-update-project',

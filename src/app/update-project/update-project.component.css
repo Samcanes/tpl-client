@@ -6,6 +6,10 @@
     background-color: green;
 } */
 
+.clicker{
+    cursor: pointer;
+}
+
 #center {
     display: flex;
     justify-content: center;

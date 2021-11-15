@@ -23,19 +23,35 @@
             <input class="form-control" type="text" name="name" [(ngModel)]='searchTearm' (ngModelChange)="Search()" placeholder="Matches only Names of project">
         </nav>
     </div>
+        <script src="https://kit.fontawesome.com/de6747fcb7.js" crossorigin="anonymous"></script>
+
     <div>
         <table class="table">
             <thead>
                 <tr>
-                    <th (click)="sort('name')" scope="col">Name&nbsp;<i class="fa fa-sort"></i></th>
-                    <th (click)="sort('reason')" scope="col">Reason</th>
-                    <th (click)="sort('type')" scope="col">Type</th>
-                    <th (click)="sort('division')" scope="col">Division</th>
-                    <th (click)="sort('category')" scope="col">Category</th>
-                    <th (click)="sort('priority')" scope="col">Priority</th>
-                    <th (click)="sort('depaartment')" scope="col">Department</th>
-                    <th (click)="sort('location')" scope="col">Location</th>
-                    <th (click)="sort('status')" scope="col">Status</th>
+                    <th class="clicker" (click)="sort('name')" scope="col">
+                        Name↨
+                    </th>
+                    <th class="clicker" (click)="sort('reason')" scope="col">
+                        Reason↨
+                    </th>
+                    <th class="clicker" (click)="sort('type')" scope="col">
+                        Type↨
+                    </th>
+                    <th class="clicker" (click)="sort('division')" scope="col">
+                        Division↨
+                    </th>
+                    <th class="clicker" (click)="sort('category')" scope="col">
+                        Category↨
+                    </th>
+                    <th class="clicker" (click)="sort('priority')" scope="col">
+                        Priority↨
+                    </th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Location</th>
+                    <th class="clicker" (click)="sort('status')" scope="col">
+                        Status↨
+                    </th>
                     <!-- <th scope="col">Update Status</th> -->
                 </tr>
             </thead>
