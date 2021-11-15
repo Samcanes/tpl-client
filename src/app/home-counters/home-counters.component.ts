@@ -33,8 +33,12 @@ export class HomeCountersComponent implements OnInit {
   public barChartPlugins = [];
 
   public barChartData: ChartDataSets[] = [
-    // { data: this.registeredData, label: 'Registered' },
-    // { data: this.closedData, label: 'Closed' }
+    {
+      data: this.totalData,
+      label: 'Total Projects',
+      backgroundColor: '#000',
+      hoverBackgroundColor: '#000',
+    },
     {
       data: this.runningData,
       label: 'Running',
@@ -91,13 +95,10 @@ export class HomeCountersComponent implements OnInit {
           // console.log(this.graphsData)
           res.obj.forEach((element: any, index: any) => {
             this.barChartLabels.push(element._id);
-            // console.log(element._id)
+            console.log(element);
             // console.log("length: ", element.updates.length)
             // let temp: string
             element.updates.forEach((comp: any) => {
-              // console.log(comp)
-              // console.log(index)
-              // console.log(this.runningData, this.registeredData, this.closedData, this.cancelledData)
               if (comp.status === 'Running') {
                 this.runningData[index] = comp.total;
               } else if (comp.status === 'Registered') {
@@ -107,10 +108,9 @@ export class HomeCountersComponent implements OnInit {
               } else if (comp.status === 'Cancelled') {
                 this.cancelledData[index] = comp.total;
               }
-              // console.log(this.runningData, this.registeredData, this.closedData, this.cancelledData)
             });
+            this.totalData[index] = element.sum;
           });
-
           // // res.obj
         },
         (err) => console.log(err)
