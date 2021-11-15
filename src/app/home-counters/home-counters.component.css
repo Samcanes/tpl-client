@@ -1,18 +1,22 @@
-.card{
+.card {
     padding: 5px;
     max-width: 220px;
 }
-#button-parent{
+
+#button-parent {
     display: flex;
     justify-content: center;
     align-items: center;
     /* text-align: center; */
 }
-#note{
+
+#note {
     text-align: center;
     color: red;
 }
-#chart{
-    width: 900px;
-    background-color: rgb(212, 246, 255);
+
+#chart {
+    border: 4px solid #FFF5B7;
+    width: 850px;
+    background-color: rgb(255, 255, 255);
 }

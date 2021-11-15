@@ -6,27 +6,40 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
+
+// sub components
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+
+// component pages
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
-import { AuthService } from './auth.service';
 import { CreateProjectComponent } from './create-project/create-project.component';
 import { UpdateProjectComponent } from './update-project/update-project.component';
 import { HomeCountersComponent } from './home-counters/home-counters.component';
 import { UserDataComponent } from './user-data/user-data.component';
+
+// services
+import { AuthService } from './auth.service';
 import { AuthProjectEventsService } from './auth-project-events.service';
+// Token related imports
 import { AuthenticatorGuard } from './authenticator.guard';
 import { TokenInterceptorService } from './token-interceptor.service';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatButtonModule} from '@angular/material/button'
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
 
+// update page buttons
+import { MatButtonModule } from '@angular/material/button';
+import { MatButtonToggleModule } from '@angular/material/button-toggle';
+
+// home page chart
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { ChartsModule } from 'ng2-charts';
 
-
+// paginataion, searching and sorting imports
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { Ng2OrderModule } from 'ng2-order-pipe';
+import { NgxPaginationModule } from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -39,28 +52,32 @@ import { ChartsModule } from 'ng2-charts';
     CreateProjectComponent,
     UpdateProjectComponent,
     HomeCountersComponent,
-    UserDataComponent
+    UserDataComponent,
   ],
   imports: [
     BrowserModule,
-    FormsModule, 
+    FormsModule,
     HttpClientModule,
     AppRoutingModule,
-    BrowserAnimationsModule, 
-    MatButtonModule, 
+    BrowserAnimationsModule,
+    MatButtonModule,
     MatButtonToggleModule,
-    NgxChartsModule, 
+    NgxChartsModule,
     ChartsModule,
-    // ScaleLinear, 
-    // ScalePoint, 
-    // ScaleTime, 
-    // ScaleBand,
+    Ng2SearchPipeModule,
+    Ng2OrderModule,
+    NgxPaginationModule,
   ],
-  providers: [AuthService, AuthProjectEventsService, AuthenticatorGuard, {
-    provide: HTTP_INTERCEPTORS,
-    useClass: TokenInterceptorService,
-    multi: true
-  }],
-  bootstrap: [AppComponent]
+  providers: [
+    AuthService,
+    AuthProjectEventsService,
+    AuthenticatorGuard,
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: TokenInterceptorService,
+      multi: true,
+    },
+  ],
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

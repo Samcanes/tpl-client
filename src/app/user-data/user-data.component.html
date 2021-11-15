@@ -1,1 +1,76 @@
-<p>user-data works!</p>
+<div>
+  <h3>Project Dashboard:</h3>
+  <div>
+    <nav>
+      <input
+        class="form-control"
+        type="text"
+        name="name"
+        [(ngModel)]="searchTearm"
+        (ngModelChange)="Search()"
+        placeholder="Matches only Names of project"
+      />
+    </nav>
+  </div>
+  <div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Reason</th>
+          <th scope="col">Type</th>
+          <th scope="col">Division</th>
+          <th scope="col">Category</th>
+          <th scope="col">Priority</th>
+          <th scope="col">Department</th>
+          <th scope="col">Location</th>
+          <th scope="col">Status</th>
+          <th scope="col">Update Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="
+            let project of projects
+              | paginate: { itemsPerPage: 5, currentPage: p }
+          "
+        >
+          <th scope="row">{{ project["name"] }}</th>
+          <td>{{ project["reason"] }}</td>
+          <td>{{ project["type"] }}</td>
+          <td>{{ project["division"] }}</td>
+          <td>{{ project["category"] }}</td>
+          <td>{{ project["priority"] }}</td>
+          <td>{{ project["department"] }}</td>
+          <td>{{ project["location"] }}</td>
+          <td>{{ project["status"] }}</td>
+          <td id="status-buttons">
+            <mat-button-toggle-group
+              #toggleGroup="matButtonToggleGroup"
+              value="{{ project['status'] }}"
+            >
+              <mat-button-toggle
+                (click)="statusUpdate(project['_id'], 'Running')"
+                value="Running"
+                >Start</mat-button-toggle
+              >
+              <mat-button-toggle
+                (click)="statusUpdate(project['_id'], 'Closed')"
+                value="Closed"
+                >Close</mat-button-toggle
+              >
+              <mat-button-toggle
+                (click)="statusUpdate(project['_id'], 'Cancelled')"
+                value="Cancelled"
+                >Cancel</mat-button-toggle
+              >
+            </mat-button-toggle-group>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div id="center">
+      <pagination-controls (pageChange)="p = $event"></pagination-controls>
+    </div>
+  </div>
+</div>

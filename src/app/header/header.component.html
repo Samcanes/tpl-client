@@ -1,40 +1,86 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light">
-    <div class="container-fluid">
-        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
-            <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/home" routerLinkActive="active">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/create" *ngIf="_authService.loggedIn()" routerLinkActive="active">Add Project</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/update" *ngIf="_authService.loggedIn()" routerLinkActive="active">Project List</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link" routerLink="/user" *ngIf="_authService.loggedIn()" routerLinkActive="active">User Data</a>
-                </li> -->
-            </ul>
-        </div>
-        <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="#">Logo</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".dual-collapse2">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-            <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/login" *ngIf="!_authService.loggedIn()" routerLinkActive="active">Login</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/register" *ngIf="!_authService.loggedIn()" routerLinkActive="active">Register</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" routerLink="/logout" *ngIf="_authService.loggedIn()" routerLinkActive="active" (click)="_authService.logoutUser()">Logout</a>
-                </li>
-            </ul>
-        </div>
+  <div class="container-fluid">
+    <div
+      class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2"
+    >
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/home" routerLinkActive="active"
+            >Dashboard</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/create"
+            *ngIf="_authService.loggedIn()"
+            routerLinkActive="active"
+            >Add Project</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/update"
+            *ngIf="_authService.loggedIn()"
+            routerLinkActive="active"
+            >All Projects</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/user"
+            *ngIf="_authService.loggedIn()"
+            routerLinkActive="active"
+            >User Projects</a
+          >
+        </li>
+      </ul>
     </div>
+    <div class="mx-auto order-0">
+      <a class="navbar-brand mx-auto" href="#">Logo</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target=".dual-collapse2"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/login"
+            *ngIf="!_authService.loggedIn()"
+            routerLinkActive="active"
+            >Login</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/register"
+            *ngIf="!_authService.loggedIn()"
+            routerLinkActive="active"
+            >Register</a
+          >
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            routerLink="/logout"
+            *ngIf="_authService.loggedIn()"
+            routerLinkActive="active"
+            (click)="_authService.logoutUser()"
+            >Logout</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 <!-- *ngIf="!_authService.loggedIn()" -->
