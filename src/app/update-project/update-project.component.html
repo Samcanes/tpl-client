@@ -1,5 +1,23 @@
 <div>
-    <h3>Project Dashboard:</h3>
+    <div class="d-flex bd-highlight">
+        <div class="p-2 flex-grow-1 bd-highlight">
+            <h3>Project Dashboard:</h3>
+        </div>
+        <div class="p-2 bd-highlight">
+            <select id="dropdownDeptSelect" class="form-select" [(ngModel)]='searchDeptTerm' (change)=dropdownDeptSelect()>
+                <option value="">Departement Wise Sort</option>
+                <option *ngFor="let each of deptDataArray" value="{{each }}">{{ each }}</option>
+            </select>
+        </div>
+
+        <div class="p-2 bd-highlight">
+            <select id="dropdownLoctSelect" class="form-select" [(ngModel)]='searchLoctTerm' (ngModelChange)="dropdownLoctSelect()">
+                <option  value="">Location Wise Sort</option>
+                <option *ngFor="let each of loctDataArray" [value]="each">{{ each }}</option>
+            </select>
+        </div>
+    </div>
+
     <div>
         <nav>
             <input class="form-control" type="text" name="name" [(ngModel)]='searchTearm' (ngModelChange)="Search()" placeholder="Matches only Names of project">
@@ -18,12 +36,12 @@
                     <th (click)="sort('depaartment')" scope="col">Department</th>
                     <th (click)="sort('location')" scope="col">Location</th>
                     <th (click)="sort('status')" scope="col">Status</th>
-                    <th scope="col">Update Status</th>
+                    <!-- <th scope="col">Update Status</th> -->
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let project of projects | 
-                paginate: { itemsPerPage: 6, currentPage: p } | 
+                paginate: { itemsPerPage: 10, currentPage: p } | 
                   orderBy: key : reverse">
                     <th scope="row">{{ project["name"] }}</th>
                     <td>{{ project["reason"] }}</td>
@@ -34,13 +52,13 @@
                     <td>{{ project["department"] }}</td>
                     <td>{{ project["location"] }}</td>
                     <td>{{ project["status"] }}</td>
-                    <td id="status-buttons">
+                    <!-- <td id="status-buttons">
                         <mat-button-toggle-group #toggleGroup="matButtonToggleGroup" value="{{ project['status'] }}">
                             <mat-button-toggle (click)="statusUpdate(project['_id'], 'Running')" value="Running">Start</mat-button-toggle>
                             <mat-button-toggle (click)="statusUpdate(project['_id'], 'Closed')" value="Closed">Close</mat-button-toggle>
                             <mat-button-toggle (click)="statusUpdate(project['_id'], 'Cancelled')" value="Cancelled">Cancel</mat-button-toggle>
                         </mat-button-toggle-group>
-                    </td>
+                    </td> -->
                 </tr>
             </tbody>
         </table>
