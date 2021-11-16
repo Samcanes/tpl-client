@@ -12,7 +12,7 @@ const app = express();
 app.use(requireHTTPS);
 app.use(express.static('./dist/tpl-client'));
     
-app.get('/', (req, res) =>
+app.get('/*', (req, res) =>
     res.sendFile('index.html', {root: 'dist/tpl-client/'}),
 );
 
